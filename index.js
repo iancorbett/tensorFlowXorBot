@@ -36,7 +36,10 @@ const inputs = tf.tensor2d([
         verbose: 0, //no logs each epoch
     });
 
+    console.log("Done training!");
     
+    const result = model.predict(inputs);
+    result.print();
   }
 
   runXOR();
