@@ -15,5 +15,11 @@ const inputs = tf.tensor2d([
     [1],
     [0],
   ]);
+
+  async function runXOR() {
+    const model = tf.sequential();
+  }
+
+  runXOR();
   
   
