@@ -22,6 +22,12 @@ const inputs = tf.tensor2d([
     model.add(tf.layers.dense({ units: 4, inputShape: [2], activation: "sigmoid" }));
     model.add(tf.layers.dense({ units: 1, activation: "sigmoid" })); //output a single number
 
+    model.compile({
+        optimizer: "adam", //algorithm that adjusts weights intelligently
+        loss: "binaryCrossentropy", //formula used for yes/no tasks
+        metrics: ["accuracy"], //keeps track of % correct during training
+      });
+    
   }
 
   runXOR();
