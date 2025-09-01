@@ -19,7 +19,7 @@ const inputs = tf.tensor2d([
   async function runXOR() {
     const model = tf.sequential();
     //4 neurons in a layer, 2 numbers as input, use sigmoid to create a range from 0-1
-    model.add(tf.layers.dense({ units: 4, inputShape: [2], activation: "sigmoid" }));
+    model.add(tf.layers.dense({ units: 8, inputShape: [2], activation: "sigmoid" }));
     model.add(tf.layers.dense({ units: 1, activation: "sigmoid" })); //output a single number
 
     model.compile({
@@ -31,7 +31,7 @@ const inputs = tf.tensor2d([
         
     console.log("Training...");
     await model.fit(inputs, outputs, { //trains neural net
-        epochs: 200,//goes throug data set 200 times
+        epochs: 2000,//goes throug data set 2000 times
         shuffle: true, //mixes rows each epoch
         verbose: 0, //no logs each epoch
     });
