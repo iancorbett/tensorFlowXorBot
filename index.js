@@ -27,6 +27,15 @@ const inputs = tf.tensor2d([
         loss: "binaryCrossentropy", //formula used for yes/no tasks
         metrics: ["accuracy"], //keeps track of % correct during training
       });
+
+        
+    console.log("Training...");
+    await model.fit(inputs, outputs, { //trains neural net
+        epochs: 200,//goes throug data set 200 times
+        shuffle: true, //mixes rows each epoch
+        verbose: 0, //no logs each epoch
+    });
+
     
   }
 
