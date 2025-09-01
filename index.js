@@ -18,6 +18,9 @@ const inputs = tf.tensor2d([
 
   async function runXOR() {
     const model = tf.sequential();
+    //4 neurons in a layer, 2 numbers as input, use sigmoid to create a range from 0-1
+    model.add(tf.layers.dense({ units: 4, inputShape: [2], activation: "sigmoid" }));
+
   }
 
   runXOR();
